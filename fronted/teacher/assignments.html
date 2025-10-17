@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignments | Nexus LMS</title>
+  <link rel="stylesheet" href="teacher.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="logo">
+        <h2>NEXUS<span> LMS</span></h2>
+      </div>
+      <ul class="menu">
+        <li><a href="dashboard.html">🏠 Dashboard</a></li>
+        <li class="active"><a href="assignments.html">📚 Assignments</a></li>
+        <li><a href="notes.html">📝 Notes</a></li>
+        <li><a href="pastpapers.html">📄 Past Papers</a></li>
+        <li><a href="results.html">📊 Results</a></li>
+      </ul>
+      <div class="logout">
+        <button id="logoutBtn">🚪 Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <h1>📚 Assignments</h1>
+      </header>
+
+      <section class="upload-section">
+        <h2>Post New Assignment</h2>
+        <form id="assignmentForm">
+          <label>Title:</label>
+          <input type="text" id="assignmentTitle" required />
+
+          <label>Description:</label>
+          <textarea id="assignmentDesc" rows="3" required></textarea>
+
+          <label>Due Date:</label>
+          <input type="date" id="dueDate" required />
+
+          <label>Upload File (PDF/DOC):</label>
+          <input type="file" id="assignmentFile" accept=".pdf,.doc,.docx" required />
+
+          <button type="submit" class="btn">Upload Assignment</button>
+        </form>
+      </section>
+
+      <section class="posted-section">
+        <h2>📄 Posted Assignments</h2>
+        <div id="assignmentList" class="file-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="teacher.js"></script>
+</body>
+</html>

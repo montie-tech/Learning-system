@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Dashboard | Nexus LMS</title>
+  <link rel="stylesheet" href="teacher.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h2>NEXUS<span> LMS</span></h2>
+      </div>
+      <ul class="menu">
+        <li class="active"><a href="dashboard.html">🏠 Dashboard</a></li>
+        <li><a href="assignments.html">📚 Assignments</a></li>
+        <li><a href="notes.html">📝 Notes</a></li>
+        <li><a href="pastpapers.html">📄 Past Papers</a></li>
+        <li><a href="results.html">📊 Results</a></li>
+      </ul>
+      <div class="logout">
+        <button id="logoutBtn">🚪 Logout</button>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+      <header class="topbar">
+        <h1>Welcome, <span>Teacher</span></h1>
+        <div class="profile">
+          <img src="../assets/images/teacher.png" alt="Teacher Profile" />
+          <span class="name">Mr. Alex</span>
+        </div>
+      </header>
+
+      <!-- DASHBOARD STATS -->
+      <section class="stats">
+        <div class="card">
+          <h3>12</h3>
+          <p>Uploaded Assignments</p>
+        </div>
+        <div class="card">
+          <h3>8</h3>
+          <p>Notes Shared</p>
+        </div>
+        <div class="card">
+          <h3>6</h3>
+          <p>Past Papers Uploaded</p>
+        </div>
+        <div class="card">
+          <h3>2</h3>
+          <p>Results Sent</p>
+        </div>
+      </section>
+
+      <!-- QUICK ACTIONS -->
+      <section class="quick-actions">
+        <h2>Quick Actions</h2>
+        <div class="action-buttons">
+          <a href="assignments.html" class="btn">+ Add Assignment</a>
+          <a href="notes.html" class="btn">+ Upload Notes</a>
+          <a href="pastpapers.html" class="btn">+ Upload Past Paper</a>
+          <a href="results.html" class="btn">+ Share Results</a>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+     
+
+  <script src="teacher.js"></script>
+</body>
+</html>
+       

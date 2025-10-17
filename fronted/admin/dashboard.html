@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Nexus LMS</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-container">
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h2>NEXUS<span> ADMIN</span></h2>
+      </div>
+      <nav>
+        <ul>
+          <li class="active"><a href="dashboard.html">📊 Dashboard</a></li>
+          <li><a href="classlist.html">📚 Class Lists</a></li>
+          <li><a href="payments.html">💳 Payments</a></li>
+          <li><a href="users.html">👥 Users</a></li>
+          <li><a href="reports.html">📈 Reports</a></li>
+        </ul>
+      </nav>
+      <button class="logout-btn">🚪 Logout</button>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+      <header class="header">
+        <h1>Welcome, Admin</h1>
+        <div class="admin-actions">
+          <input type="text" placeholder="Search..." class="search-bar" />
+          <img src="../assets/icons/admin.png" alt="Profile" class="profile-icon" />
+        </div>
+      </header>
+
+      <!-- ===== OVERVIEW CARDS ===== -->
+      <section class="overview">
+        <div class="card">
+          <h3>👩‍🏫 Teachers</h3>
+          <p>42 Active</p>
+        </div>
+        <div class="card">
+          <h3>🎓 Learners</h3>
+          <p>512 Registered</p>
+        </div>
+        <div class="card">
+          <h3>🏫 Classes</h3>
+          <p>24 Total</p>
+        </div>
+        <div class="card">
+          <h3>💰 Pending Payments</h3>
+          <p>17 Unpaid</p>
+        </div>
+      </section>
+
+      <!-- ===== RECENT ACTIVITY ===== -->
+      <section class="recent-activity">
+        <h2>Recent Activity</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>User</th>
+              <th>Action</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Oct 13, 2025</td>
+              <td>Mr. Kamau</td>
+              <td>Uploaded Class List</td>
+              <td>Grade 7 Excel Sheet</td>
+            </tr>
+            <tr>
+              <td>Oct 13, 2025</td>
+              <td>Admin</td>
+              <td>Approved Payment</td>
+              <td>Student: Faith Njoroge</td>
+            </tr>
+            <tr>
+              <td>Oct 12, 2025</td>
+              <td>Admin</td>
+              <td>Added Teacher</td>
+              <td>Subject: Mathematics</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== QUICK ACTIONS ===== -->
+      <section class="quick-actions">
+        <h2>Quick Actions</h2>
+        <button class="upload-btn">📤 Upload Class List (.xlsx)</button>
+        <button class="manage-btn">👥 Manage Users</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
