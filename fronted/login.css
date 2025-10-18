@@ -8,7 +8,7 @@
 
 /* ===== BACKGROUND ===== */
 body {
-  background:  gold;
+  background:#945c07ff;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -143,7 +143,7 @@ body {
   color: #ccc;
   font-size: 0.9rem;
   text-decoration: none;
-   margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer a:hover {
@@ -156,4 +156,54 @@ body {
   padding-top: 1rem;
   color: #aaa;
   font-size: 0.85rem;
+}
+
+.footer-links {
+  margin-top: 20px;
+}
+
+.footer-about {
+  margin-top: 50px;
+}
+
+.footer-links h4 {
+  color: #38bdf8; /* accent color */
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px; /* 👈 adds vertical spacing between links */
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #f1f5f9;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  padding: 1px 0;
+  align-items: center;
+}
+
+.footer-links ul li a:hover {
+  color: #38bdf8;
+  transform: translateX(4px); /* slight hover motion */
+}
+
+/* Responsive layout for wider footers */
+@media (min-width: 768px) {
+  .footer-links ul {
+    flex-direction: column;
+    gap: 15px; /* 👈 space between links horizontally */
+  }
+
+  .footer-links ul li a {
+    padding: 5px 10px;
+  }
 }
