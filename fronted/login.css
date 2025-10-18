@@ -177,7 +177,7 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1px; /* 👈 adds vertical spacing between links */
 }
 
@@ -192,8 +192,9 @@ body {
 }
 
 .footer-links ul li a:hover {
-  color: #38bdf8;
+  color: #945c07ff;
   transform: translateX(4px); /* slight hover motion */
+  font-weight: bold;
 }
 
 /* Responsive layout for wider footers */
