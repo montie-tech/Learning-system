@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Management | Nexus Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="admin-header">
+    <h1>Nexus Admin - User Management</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="classlist.html">Classlist</a>
+      <a href="payments.html">Payments</a>
+      <a href="users.html" class="active">Users</a>
+      <a href="reports.html">Reports</a>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN CONTAINER ===== -->
+  <main class="admin-container">
+    <section class="user-section">
+      <h2>Manage Users</h2>
+
+      <!-- Add/Edit User Form -->
+      <form id="userForm" class="user-form">
+        <input type="text" id="userName" placeholder="Full Name" required />
+        <input type="email" id="userEmail" placeholder="Email Address" required />
+        <select id="userRole">
+          <option value="Learner">Learner</option>
+          <option value="Teacher">Teacher</option>
+          <option value="Admin">Admin</option>
+        </select>
+        <button type="submit" class="btn-primary">Add User</button>
+      </form>
+
+      <!-- Search & Filter -->
+      <div class="filter-bar">
+        <input type="text" id="searchUser" placeholder="Search user..." />
+        <select id="filterRole">
+          <option value="All">All Roles</option>
+          <option value="Learner">Learner</option>
+          <option value="Teacher">Teacher</option>
+          <option value="Admin">Admin</option>
+        </select>
+      </div>
+
+      <!-- User Table -->
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody">
+          <!-- Rows dynamically rendered -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
