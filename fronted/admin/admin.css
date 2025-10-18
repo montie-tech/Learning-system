@@ -418,3 +418,63 @@ body {
   background-color: #f8f9fa;
 }
 
+/* ===== HEADER ===== */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #1b1b2f;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid #d4af37;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-header h1 {
+  color: #f5f7fb;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px #d4af37;
+}
+
+.admin-header nav a {
+  color: #f5f7fb;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  background: linear-gradient(145deg, transparent 0%, transparent 100%);
+}
+
+/* Golden gradient hover effect */
+.admin-header nav a:hover,
+.admin-header nav a.active {
+  background: linear-gradient(90deg, #ffd700, #ffbf00);
+  color: #1b1b2f;
+  box-shadow: 0 0 12px #ffd700, 0 0 20px #ffbf00;
+  text-shadow: none;
+}
+
+/* Animated underline for extra polish */
+.admin-header nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #ffd700;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  border-radius: 2px;
+}
+
+.admin-header nav a:hover::after,
+.admin-header nav a.active::after {
+  width: 100%;
+}
