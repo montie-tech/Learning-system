@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materials | Student Portal</title>
+
+  <style>
+    :root {
+      --sidebar-bg: #1e293b;
+      --card-bg: #26283b;
+      --accent: #1e293b;
+      --text: #fff;
+      --muted: #b9b9c5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #945c07ff;
+      color: var(--text);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Layout */
+    .layout {
+      display: flex;
+      width: 100%;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--sidebar-bg);
+      color: white;
+      width: 250px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease-in-out;
+      z-index: 200;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+      font-size: 22px;
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: white;
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .sidebar-footer {
+      font-size: 13px;
+      line-height: 1.4;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 10px;
+    }
+
+    /* Main */
+    main {
+      margin-left: 250px;
+      padding: 30px;
+      flex: 1;
+      color: #222;
+      transition: margin-left 0.3s;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #000;
+    }
+
+    .container {
+      margin-top: 30px;
+      max-width: 800px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    select {
+      width: 100%;
+      margin-top: 8px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    #materialsSection {
+      display: none;
+      margin-top: 20px;
+      color:white;
+    }
+
+    h3, h4 {
+      margin-bottom: 10px;
+      color:white;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .file-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .file-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: var(--accent);
+      color: white;
+      font-size: 22px;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 300;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .container {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+      }
+
+      .sidebar.active {
+        transform: translateX(0);
+      }
+
+      main {
+        margin-left: 0;
+        padding: 20px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    @media (min-width: 1400px) {
+      main {
+        margin-left: 260px;
+      }
+
+      header h1 {
+        font-size: 34px;
+      }
+
+      .card {
+        padding: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <button class="hamburger" id="menuBtn">☰</button>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div>
+        <h2>🎓 Student Portal</h2>
+        <nav>
+          <a href="index.html">🏠 Dashboard</a>
+          <a href="materials.html" class="active">📘 Materials</a>
+          <a href="assignments.html">🧾 Assignments</a>
+          <a href="settings.html">⚙️ Settings</a>
+        </nav>
+      </div>
+
+    
+    </aside>
+
+    <!-- Main -->
+    <main>
+      <header>
+        <h1>📘 Learning Materials</h1>
+      </header>
+
+      <div class="container">
+        <div class="card">
+          <label for="unitSelect">Select Unit</label>
+          <select id="unitSelect">
+            <option value="">-- Choose a unit --</option>
+            <option value="Graph Theory">Graph Theory</option>
+            <option value="Database Systems">Database Systems</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Artificial Intelligence">Artificial Intelligence</option>
+            <option value="Computer Networks">Computer Networks</option>
+            <option value="Software Engineering">Software Engineering</option>
+            <option value="Operating Systems">Operating Systems</option>
+            <option value="Data Structures">Data Structures</option>
+          </select>
+
+          <div id="materialsSection">
+            <h4 id="unitTitle"></h4>
+            <p id="unitDesc"></p>
+
+            <h4>🎥 Tutorials</h4>
+            <ul id="tutorialsList"></ul>
+
+            <h4>📂 Files</h4>
+            <ul id="filesList"></ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Materials Script -->
+  <script>
+    const materialsData = {
+      "Graph Theory": {
+        desc: "Understand graphs, networks, and algorithms such as BFS, DFS, and Dijkstra’s algorithm.",
+        tutorials: ["Introduction to Graphs", "Graph Traversal Algorithms", "Shortest Path Techniques"],
+        files: [
+          { name: "Graph Theory Basics.pdf", link: "#" },
+          { name: "BFS vs DFS Slides.pptx", link: "#" },
+          { name: "Graph Algorithm Demo.mp4", link: "#" }
+        ]
+      },
+      "Database Systems": {
+        desc: "Learn relational models, SQL queries, normalization, and database design.",
+        tutorials: ["Entity Relationship Diagrams", "Normalization Explained", "SQL CRUD Operations"],
+        files: [
+          { name: "ERD Guide.pdf", link: "#" },
+          { name: "SQL Commands Sheet.pdf", link: "#" },
+          { name: "Normalization Practice.db", link: "#" }
+        ]
+      },
+      "Web Development": {
+        desc: "Build modern responsive websites using HTML, CSS, and JavaScript.",
+        tutorials: ["HTML5 Fundamentals", "CSS Layout Techniques", "JavaScript DOM Manipulation"],
+        files: [
+          { name: "HTML Reference.pdf", link: "#" },
+          { name: "Responsive Design.pptx", link: "#" },
+          { name: "JS DOM Project.zip", link: "#" }
+        ]
+      },
+      "Artificial Intelligence": {
+        desc: "Explore the fundamentals of AI, search algorithms, and neural networks.",
+        tutorials: ["AI Search Algorithms", "Knowledge Representation", "Neural Network Basics"],
+        files: [
+          { name: "AI Overview.pdf", link: "#" },
+          { name: "NeuralNetDemo.mp4", link: "#" },
+          { name: "AI Algorithms.pptx", link: "#" }
+        ]
+      }
+    };
+
+    const unitSelect = document.getElementById('unitSelect');
+    const materialsSection = document.getElementById('materialsSection');
+    const unitTitle = document.getElementById('unitTitle');
+    const unitDesc = document.getElementById('unitDesc');
+    const tutorialsList = document.getElementById('tutorialsList');
+    const filesList = document.getElementById('filesList');
+
+    unitSelect.addEventListener('change', () => {
+      const selected = unitSelect.value;
+      if (selected && materialsData[selected]) {
+        const data = materialsData[selected];
+        materialsSection.style.display = 'block';
+        unitTitle.textContent = selected;
+        unitDesc.textContent = data.desc;
+
+        tutorialsList.innerHTML = '';
+        data.tutorials.forEach(t => {
+          const li = document.createElement('li');
+          li.textContent = '🎥 ' + t;
+          tutorialsList.appendChild(li);
+        });
+
+        filesList.innerHTML = '';
+        data.files.forEach(f => {
+          const li = document.createElement('li');
+          li.innerHTML = `📄 <a class="file-link" href="${f.link}" target="_blank">${f.name}</a>`;
+          filesList.appendChild(li);
+        });
+      } else {
+        materialsSection.style.display = 'none';
+      }
+    });
+  </script>
+
+  <!-- Sidebar Toggle -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.querySelector('.sidebar');
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
