@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #1a1a1a;
+      background-color: #f3f4f5;
+    }
+
+    header {
+      background: #f3f4f5;
+      padding: 20px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0c1c3a;
+    }
+
+    .logo span {
+      color: #945c07ff;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 15px;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: white;
+      background: #945c07ff;
+      padding: 0.3rem 0.5rem;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+    }
+
+    .courses-hero {
+     color: #f3f4f5;
+     text-align: center;
+     padding: 120px 40px;
+     background-color: #1e293b;
+     background-blend-mode: overlay;
+}
+
+
+    .courses-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .courses-hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .intro {
+      padding: 60px 80px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: #945c07ff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      max-width: 900px;
+      margin: 0 auto 25px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .courses-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 60px 80px;
+      background: #f3f4f5;
+    }
+
+    .course-card {
+      background-color:#945c07ff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 30px 20px;
+      transition: 0.3s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .course-card h3 {
+      color: #0c1c3a;
+      margin-bottom: 10px;
+    }
+
+    .course-card p {
+      color: #fffafaff;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0c1c3a;
+      color: #f3f4f5;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 25px;
+      }
+      .intro, .courses-list {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">NEXUS <span>LMS</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="courses.html" class="active">Courses</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <section class="courses-hero">
+    <h1>Our Courses</h1>
+    <p>Discover a world of possibilities with Nexus Learning System — where innovation meets education.</p>
+  </section>
+
+  <section class="intro">
+    <h2>Empowering Minds Through Knowledge</h2>
+    <p>
+      At Nexus LMS, we believe in creating a learning experience that prepares students for the real world. 
+      Our courses are designed to blend theory with practical application, ensuring every learner builds a strong foundation in their field of study.
+    </p>
+
+    <p>
+      From data and software systems to artificial intelligence and networks, we offer a variety of programs that empower students to learn, innovate, and lead.
+      Our platform supports interactive content, discussions, and assessments that make learning more engaging and meaningful.
+    </p>
+
+    <p>
+      Whether you’re a beginner or an advanced learner, Nexus LMS provides a supportive environment to grow your skills and achieve your academic goals — 
+      anywhere, anytime.
+    </p>
+  </section>
+
+  <section class="courses-list">
+    <div class="course-card">
+      <h3>Mathematics</h3>
+      <p>Build analytical and problem-solving skills through applied mathematical concepts used across all disciplines.</p>
+    </div>
+
+    <div class="course-card">
+      <h3>Database Systems</h3>
+      <p>Learn to design, manage, and secure data-driven systems essential for today’s technology-driven world.</p>
+    </div>
+
+    <div class="course-card">
+      <h3>Web Development</h3>
+      <p>Master front-end and back-end web technologies to create stunning and responsive websites.</p>
+    </div>
+
+    <div class="course-card">
+      <h3>Artificial Intelligence</h3>
+      <p>Explore the future of intelligent systems — from machine learning to neural networks and automation.</p>
+    </div>
+
+    <div class="course-card">
+      <h3>Computer Networks</h3>
+      <p>Understand the architecture, protocols, and security behind modern communication systems.</p>
+    </div>
+
+    <div class="course-card">
+      <h3>Software Engineering</h3>
+      <p>Design, build, and maintain reliable software using structured development practices and teamwork.</p>
+    </div>
+
+    <div class="course-card">
+      <h3>Operating Systems</h3>
+      <p>Dive deep into the systems that power devices — from process management to memory and security control.</p>
+    </div>
+
+    <div class="course-card">
+      <h3>Data Structures</h3>
+      <p>Develop efficient problem-solving skills by understanding how data is organized, stored, and manipulated.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Nexus Learning System. All Rights Reserved.
+  </footer>
+</body>
+</html>

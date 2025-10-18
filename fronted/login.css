@@ -148,6 +148,7 @@ body {
 
 .footer a:hover {
   color: #945c07ff;
+  font-weight: 500;
 }
 
 .footer-bottom {
