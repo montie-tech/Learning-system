@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup | Nexus Learning System</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h1><span>Nexus</span> Learning</h1>
+      <p class="subtitle">Create your account to start learning</p>
+
+      <form id="signupForm">
+        <div class="input-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" placeholder="Enter your full name" required />
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" required />
+        </div>
+
+        <div class="input-group">
+          <label for="role">Register As</label>
+          <select id="role" required>
+            <option value="" disabled selected>Select role</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-login">Sign Up</button>
+
+        <p class="signup-text">
+          Already have an account? <a href="login.html">Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <h3>Nexus Learning</h3>
+        <p>Empowering education through technology.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <p><a href="#">Home</a></p>
+        <p><a href="#">About</a></p>
+        <p><a href="#">Contact</a></p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Email: support@nexuslearn.com</p>
+        <p>Phone: +254 700 000 000</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Nexus Learning System | All Rights Reserved
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("✅ Signup successful! You can now login to your account.");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
