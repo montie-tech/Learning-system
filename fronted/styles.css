@@ -31,11 +31,11 @@ body {
 .logo {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #0077ff;
+  color: #1e293b;
 }
 
 .logo span {
-  color: #111;
+  color: #945c07ff;
 }
 
 .nav-links {
@@ -53,22 +53,26 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #0077ff;
+  background: #945c07ff;
+  color: #fff !important;
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 
-.btn-login {
-  background: #0077ff;
-  color: #fff !important;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-}
+
 
 /* ===== HERO SECTION ===== */
 .hero {
-  background: linear-gradient(to right, #0077ff, #00bcd4);
-  color: #fff;
+  background: url("landing.jpg");
+  color: #1e293b;
   text-align: center;
   padding: 6rem 1.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero-content {
@@ -82,7 +86,7 @@ body {
 }
 
 .hero-content h1 span {
-  color: #fff700;
+  color: #945c07ff;
 }
 
 .hero-content p {
@@ -102,7 +106,7 @@ body {
 
 .btn-primary {
   background: #fff;
-  color: #0077ff;
+  color: #945c07ff;
 }
 
 .btn-primary:hover {
@@ -116,7 +120,7 @@ body {
 
 .btn-secondary:hover {
   background: #fff;
-  color: #0077ff;
+  color: #1e293b;
 }
 
 /* ===== FEATURES SECTION ===== */
@@ -129,7 +133,7 @@ body {
 .features h2 {
   margin-bottom: 2rem;
   font-size: 2rem;
-  color: #0077ff;
+  color: #1e293b;
 }
 
 .feature-grid {
@@ -157,7 +161,7 @@ body {
 
 /* ===== STATS SECTION ===== */
 .stats {
-  background: #0077ff;
+  background: #1e293b;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -168,7 +172,7 @@ body {
 
 .stat-card h3 {
   font-size: 2rem;
-  color: #fff700;
+  color: #945c07ff;
 }
 
 .stat-card p {
@@ -184,7 +188,7 @@ body {
 
 .cta h2 {
   font-size: 2rem;
-  color: #0077ff;
+  color: #1e293b;
   margin-bottom: 1rem;
 }
 
@@ -195,7 +199,7 @@ body {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: #111;
+  background: #1e293b;
   color: #ccc;
   text-align: center;
   padding: 1.5rem;
