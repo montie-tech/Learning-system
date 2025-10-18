@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Class List Management | Nexus Admin</title>
+
+  <!-- ===== CSS ===== -->
   <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- ===== Excel Library ===== -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
@@ -21,24 +26,43 @@
         <a href="users.html">👥 Users</a>
         <a href="reports.html">📈 Reports</a>
       </nav>
-      <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
+      <button class="logout-btn" id="logoutBtn">Logout🔒</button>
     </aside>
 
     <!-- ===== MAIN CONTENT ===== -->
     <main class="main-content">
       <header class="header">
         <h1>Manage Class Lists</h1>
+        <div class="admin-actions">
+          <input type="text" placeholder="Search..." class="search-bar" />
+
+          <div class="profile-icon" id="profileIcon">
+            <i class="fa-solid fa-user-circle"></i>
+            <div class="profile-dropdown" id="profileDropdown">
+              <ul>
+                <li>My Profile</li>
+                <li>Settings</li>
+                <li id="logoutBtn2">Logout</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </header>
 
-      <section class="upload-section">
-        <h2>Upload New Class List</h2>
+      <!-- ===== UPLOAD SECTION ===== -->
+      <section class="upload-section card">
+        <h2>📤 Upload New Class List</h2>
         <p>Upload an Excel (.xlsx or .csv) file containing student names, IDs, and classes.</p>
-        <input type="file" id="excelFile" accept=".xlsx, .xls, .csv" />
-        <button id="uploadExcel" class="upload-btn">📤 Upload</button>
+
+        <div class="upload-box">
+          <input type="file" id="excelFile" accept=".xlsx, .xls, .csv" />
+          <button id="uploadExcel" class="upload-btn">Upload File</button>
+        </div>
       </section>
 
-      <section class="table-section">
-        <h2>Class List Preview</h2>
+      <!-- ===== TABLE SECTION ===== -->
+      <section class="table-section card">
+        <h2>📚 Class List Preview</h2>
         <table id="classTable">
           <thead>
             <tr>
@@ -57,12 +81,31 @@
     </main>
   </div>
 
+  <!-- ===== SCRIPTS ===== -->
   <script>
-    // Logout redirect
+    // ===== Logout Redirect =====
     document.getElementById('logoutBtn').addEventListener('click', () => {
-      window.location.href = '../index.html'; // change to your homepage path
+      window.location.href = '../index.html';
+    });
+    document.getElementById('logoutBtn2').addEventListener('click', () => {
+      window.location.href = '../index.html';
+    });
+
+    // ===== Profile Dropdown =====
+    const profileIcon = document.getElementById("profileIcon");
+    const dropdown = document.getElementById("profileDropdown");
+
+    profileIcon.addEventListener("click", () => {
+      dropdown.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!profileIcon.contains(e.target)) {
+        dropdown.classList.remove("active");
+      }
     });
   </script>
+
   <script src="admin.js"></script>
 </body>
 </html>

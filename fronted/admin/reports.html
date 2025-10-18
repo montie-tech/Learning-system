@@ -20,17 +20,15 @@
         <a href="users.html">👥 Users</a>
         <a href="reports.html" class="active">📈 Reports</a>
       </nav>
-      <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
+      <button class="logout-btn" id="logoutBtn">Logout🔒</button>
     </aside>
 
     <!-- ===== MAIN CONTENT ===== -->
     <main class="main-content">
-      <header class="header">
-        <h1>Reports & Analytics</h1>
-      </header>
-
-      <!-- Filter -->
       <section class="report-section">
+        <h2>Reports & Analytics</h2>
+
+        <!-- ===== FILTER BAR ===== -->
         <div class="filter-bar">
           <input type="date" id="startDate" />
           <input type="date" id="endDate" />
@@ -43,7 +41,7 @@
           <button class="btn-primary" id="generateReport">Generate</button>
         </div>
 
-        <!-- Summary Cards -->
+        <!-- ===== SUMMARY CARDS ===== -->
         <div class="report-cards">
           <div class="report-card">
             <h3 id="totalTeachers">0</h3>
@@ -63,7 +61,7 @@
           </div>
         </div>
 
-        <!-- Table Section -->
+        <!-- ===== TABLE SECTION ===== -->
         <table class="report-table">
           <thead>
             <tr>
@@ -78,7 +76,7 @@
           </tbody>
         </table>
 
-        <!-- Export Buttons -->
+        <!-- ===== EXPORT BUTTONS ===== -->
         <div class="export-buttons">
           <button class="btn-secondary" id="exportCSV">Export CSV</button>
           <button class="btn-secondary" id="exportExcel">Export Excel</button>

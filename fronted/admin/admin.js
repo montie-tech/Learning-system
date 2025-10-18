@@ -267,4 +267,15 @@ generateBtn.addEventListener("click", () => {
 
 updateSummary();
 renderReports();
+const profileIcon = document.getElementById("profileIcon");
+const dropdown = document.getElementById("profileDropdown");
+profileIcon.addEventListener("click", () => {
+  dropdown.classList.toggle("active");
+  });
+  document.addEventListener("click", (e) => {
+    if (!profileIcon.contains(e.target)) {
+      dropdown.classList.remove("active");
+    }
+  });
+
 

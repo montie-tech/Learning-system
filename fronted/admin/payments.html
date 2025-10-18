@@ -5,25 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Payments | Nexus Admin Dashboard</title>
   <link rel="stylesheet" href="admin.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body>
   <div class="admin-wrapper">
     <!-- ===== SIDEBAR ===== -->
     <aside class="sidebar">
-      <h2 class="logo">Nexus <span>Admin</span></h2>
+      <div class="logo">
+        <h2>NEXUS <span>ADMIN</span></h2>
+      </div>
       <nav>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="classlist.html">Classlist</a>
-        <a href="payments.html" class="active">Payments</a>
-        <a href="users.html">Users</a>
-        <a href="reports.html">Reports</a>
+        <a href="dashboard.html">📊 Dashboard</a>
+        <a href="classlist.html">📚 Classlist</a>
+        <a href="payments.html" class="active">💳 Payments</a>
+        <a href="users.html">👥 Users</a>
+        <a href="reports.html">📈 Reports</a>
       </nav>
+      <button class="logout-btn" id="logoutBtn">Logout🔒</button>
     </aside>
 
     <!-- ===== MAIN CONTENT ===== -->
     <main class="main-content">
+      <header class="header">
+        <h1>Manage Student Payments</h1>
+        <div class="profile-icon" id="profileIcon">
+         <i class="fa-solid fa-user-circle"></i>
+        </div>
+      </header>
+
+      <!-- ===== PAYMENT SECTION ===== -->
       <section class="payment-section">
-        <h2>Manage Student Payments</h2>
+        <h2>Add or Manage Payments</h2>
 
         <!-- Payment Form -->
         <form id="paymentForm" class="payment-form">
@@ -34,12 +49,12 @@
             <option value="Pending">Pending</option>
             <option value="Paid">Paid</option>
           </select>
-          <button type="submit" class="btn-primary">Add Payment</button>
+          <button type="submit" class="btn-primary">➕ Add Payment</button>
         </form>
 
         <!-- Search and Filter -->
         <div class="filter-bar">
-          <input type="text" id="searchInput" placeholder="Search student..." />
+          <input type="text" id="searchInput" placeholder="🔍 Search student..." />
           <select id="filterStatus">
             <option value="All">All</option>
             <option value="Paid">Paid</option>
@@ -48,25 +63,49 @@
         </div>
 
         <!-- Payment Table -->
-        <table class="payment-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Student</th>
-              <th>Class</th>
-              <th>Amount (KES)</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="paymentTableBody">
-            <!-- Rows dynamically inserted -->
-          </tbody>
-        </table>
+        <section class="table-section card">
+          <h3>Payment Records</h3>
+          <table class="payment-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Student</th>
+                <th>Class</th>
+                <th>Amount (KES)</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="paymentTableBody">
+              <tr>
+                <td>1</td>
+                <td>Mary Wanjiku</td>
+                <td>Grade 8</td>
+                <td>15,000</td>
+                <td><span class="status paid">Paid</span></td>
+                <td><button class="action-btn">View</button></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>James Kariuki</td>
+                <td>Grade 6</td>
+                <td>15,000</td>
+                <td><span class="status pending">Pending</span></td>
+                <td><button class="action-btn">Approve</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       </section>
     </main>
   </div>
 
+  <script>
+    // Logout redirect
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      window.location.href = '../index.html';
+    });
+  </script>
   <script src="admin.js"></script>
 </body>
 </html>

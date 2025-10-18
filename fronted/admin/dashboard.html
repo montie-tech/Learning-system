@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard | Nexus LMS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
   <link rel="stylesheet" href="admin.css" />
+  
 </head>
 <body>
   <div class="admin-wrapper">
@@ -20,7 +23,7 @@
         <a href="users.html">👥 Users</a>
         <a href="reports.html">📈 Reports</a>
       </nav>
-      <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
+      <button class="logout-btn" id="logoutBtn">Logout🔒</button>
     </aside>
 
     <!-- ===== MAIN CONTENT ===== -->
@@ -29,8 +32,20 @@
         <h1>Welcome, Admin</h1>
         <div class="admin-actions">
           <input type="text" placeholder="Search..." class="search-bar" />
-          <img src="../assets/icons/admin.png" alt="Profile" class="profile-icon" />
+          <div class="profile-icon" id="profileIcon">
+            <i class="fa-solid fa-user-circle"></i>
+          <div class="profile-dropdown" id="profileDropdown">
+          <ul>
+          <li>My Profile</li>
+          <li>Settings</li>
+          <li id="logoutBtn">Logout</li>
+          </ul>
         </div>
+          </div>
+        </div>
+
+
+
       </header>
 
       <!-- ===== OVERVIEW CARDS ===== -->
@@ -103,5 +118,27 @@
       window.location.href = '../index.html'; // change to your homepage path
     });
   </script>
+
+  <script>
+  const profileIcon = document.getElementById('profileIcon');
+  const profileDropdown = document.getElementById('profileDropdown');
+
+  profileIcon.addEventListener('click', () => {
+    profileDropdown.classList.toggle('active');
+  });
+
+  // Close dropdown if clicked outside
+  document.addEventListener('click', (e) => {
+    if (!profileIcon.contains(e.target)) {
+      profileDropdown.classList.remove('active');
+    }
+  });
+
+  // Logout redirect
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    window.location.href = '../index.html';
+  });
+</script>
+
 </body>
 </html>

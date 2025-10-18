@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>User Management | Nexus Admin</title>
   <link rel="stylesheet" href="admin.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body>
   <div class="admin-wrapper">
@@ -20,17 +24,22 @@
         <a href="users.html" class="active">👥 Users</a>
         <a href="reports.html">📈 Reports</a>
       </nav>
-      <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
+      <button class="logout-btn" id="logoutBtn">Logout🔒</button>
     </aside>
 
     <!-- ===== MAIN CONTENT ===== -->
     <main class="main-content">
       <header class="header">
         <h1>Manage Users</h1>
+        <div class="profile-icon" id="profileIcon">
+          <i class="fa-solid fa-user-circle"></i>
+        </div>
       </header>
 
-      <!-- Add/Edit User Form -->
       <section class="user-section">
+        <h2>Add or Manage Users</h2>
+
+        <!-- Add/Edit User Form -->
         <form id="userForm" class="user-form">
           <input type="text" id="userName" placeholder="Full Name" required />
           <input type="email" id="userEmail" placeholder="Email Address" required />
@@ -39,12 +48,12 @@
             <option value="Teacher">Teacher</option>
             <option value="Admin">Admin</option>
           </select>
-          <button type="submit" class="btn-primary">Add User</button>
+          <button type="submit" class="btn-primary">➕ Add User</button>
         </form>
 
         <!-- Search & Filter -->
         <div class="filter-bar">
-          <input type="text" id="searchUser" placeholder="Search user..." />
+          <input type="text" id="searchUser" placeholder="🔍 Search user..." />
           <select id="filterRole">
             <option value="All">All Roles</option>
             <option value="Learner">Learner</option>
@@ -54,28 +63,50 @@
         </div>
 
         <!-- User Table -->
-        <table class="user-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="userTableBody">
-            <tr><td colspan="5" style="text-align:center;">No users added yet</td></tr>
-          </tbody>
-        </table>
+        <section class="table-section card">
+          <h2>Registered Users</h2>
+          <table class="user-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="userTableBody">
+              <tr>
+                <td>1</td>
+                <td>Faith Njoroge</td>
+                <td>faith.njoroge@example.com</td>
+                <td><span class="role learner">Learner</span></td>
+                <td>
+                  <button class="action-btn">Edit</button>
+                  <button class="action-btn delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Mr. Kamau</td>
+                <td>kamau.teach@example.com</td>
+                <td><span class="role teacher">Teacher</span></td>
+                <td>
+                  <button class="action-btn">Edit</button>
+                  <button class="action-btn delete">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       </section>
     </main>
   </div>
 
   <script>
     // Logout redirect
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      window.location.href = '../index.html'; // set your homepage path
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      window.location.href = "../index.html"; // set your homepage path
     });
   </script>
   <script src="admin.js"></script>
