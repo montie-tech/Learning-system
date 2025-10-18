@@ -8,7 +8,7 @@
 
 /* ===== BACKGROUND ===== */
 body {
-  background:  #f9fafb;
+  background:  #f0f4f8;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@ body {
 }
 
 .login-box h1 span {
-  color: #d4af37; /* gold */
+  color: #945c07ff; /* gold */
 }
 
 .subtitle {
@@ -59,7 +59,7 @@ body {
 .input-group label {
   display: block;
   font-weight: 600;
-  color: #0a1a3c;
+  color: #1e293b;
   margin-bottom: 0.4rem;
 }
 
@@ -76,13 +76,13 @@ body {
 
 .input-group input:focus,
 .input-group select:focus {
-  border-color: #d4af37;
+  border-color: #945c07ff;
 }
 
 /* ===== BUTTON ===== */
 .btn-login {
   width: 100%;
-  background: #d4af37;
+  background: #945c07ff;
   color: #0a1a3c;
   border: none;
   padding: 10px;
@@ -94,7 +94,8 @@ body {
 }
 
 .btn-login:hover {
-  background: #e8c553;
+  background: #1e293b;
+  color:white;
 }
 
 /* ===== SIGNUP TEXT ===== */
@@ -111,7 +112,7 @@ body {
 }
 
 .signup-text a:hover {
-  color: #d4af37;
+  color: #945c07ff;
 }
 
 /* ===== FOOTER ===== */
@@ -133,7 +134,7 @@ body {
 }
 
 .footer h3 {
-  color: #d4af37;
+  color: #945c07ff;
   margin-bottom: 0.8rem;
 }
 
@@ -142,10 +143,11 @@ body {
   color: #ccc;
   font-size: 0.9rem;
   text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .footer a:hover {
-  color: #d4af37;
+  color: #945c07ff;
 }
 
 .footer-bottom {
@@ -154,4 +156,55 @@ body {
   padding-top: 1rem;
   color: #aaa;
   font-size: 0.85rem;
+}
+
+.footer-links {
+  margin-top: 20px;
+}
+
+.footer-about {
+  margin-top: 50px;
+}
+
+.footer-links h4 {
+  color: #38bdf8; /* accent color */
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1px; /* 👈 adds vertical spacing between links */
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #f1f5f9;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  padding: 1px 0;
+  align-items: center;
+}
+
+.footer-links ul li a:hover {
+  color: #945c07ff;
+  transform: translateX(4px); /* slight hover motion */
+  font-weight: bold;
+}
+
+/* Responsive layout for wider footers */
+@media (min-width: 768px) {
+  .footer-links ul {
+    flex-direction: column;
+    gap: 15px; /* 👈 space between links horizontally */
+  }
+
+  .footer-links ul li a {
+    padding: 5px 10px;
+  }
 }
