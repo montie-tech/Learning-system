@@ -7,80 +7,93 @@
   <link rel="stylesheet" href="admin.css" />
 </head>
 <body>
-  <!-- ===== HEADER ===== -->
-  <header class="admin-header">
-    <h1>Nexus Admin - Reports & Analytics</h1>
-    <nav>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="classlist.html">Classlist</a>
-      <a href="payments.html">Payments</a>
-      <a href="users.html">Users</a>
-      <a href="reports.html" class="active">Reports</a>
-    </nav>
-  </header>
+  <div class="admin-wrapper">
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h2>NEXUS<span> ADMIN</span></h2>
+      </div>
+      <nav>
+        <a href="dashboard.html">📊 Dashboard</a>
+        <a href="classlist.html">📚 Class Lists</a>
+        <a href="payments.html">💳 Payments</a>
+        <a href="users.html">👥 Users</a>
+        <a href="reports.html" class="active">📈 Reports</a>
+      </nav>
+      <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
+    </aside>
 
-  <!-- ===== MAIN CONTAINER ===== -->
-  <main class="admin-container">
-    <section class="report-section">
-      <h2>System Reports Overview</h2>
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+      <header class="header">
+        <h1>Reports & Analytics</h1>
+      </header>
 
       <!-- Filter -->
-      <div class="filter-bar">
-        <input type="date" id="startDate" />
-        <input type="date" id="endDate" />
-        <select id="reportType">
-          <option value="All">All Reports</option>
-          <option value="Users">Users</option>
-          <option value="Payments">Payments</option>
-          <option value="Classes">Classes</option>
-        </select>
-        <button class="btn-primary" id="generateReport">Generate</button>
-      </div>
-
-      <!-- Summary Cards -->
-      <div class="report-cards">
-        <div class="report-card">
-          <h3 id="totalTeachers">0</h3>
-          <p>Total Teachers</p>
+      <section class="report-section">
+        <div class="filter-bar">
+          <input type="date" id="startDate" />
+          <input type="date" id="endDate" />
+          <select id="reportType">
+            <option value="All">All Reports</option>
+            <option value="Users">Users</option>
+            <option value="Payments">Payments</option>
+            <option value="Classes">Classes</option>
+          </select>
+          <button class="btn-primary" id="generateReport">Generate</button>
         </div>
-        <div class="report-card">
-          <h3 id="totalLearners">0</h3>
-          <p>Total Learners</p>
-        </div>
-        <div class="report-card">
-          <h3 id="totalPayments">0</h3>
-          <p>Total Payments</p>
-        </div>
-        <div class="report-card">
-          <h3 id="pendingPayments">0</h3>
-          <p>Pending Payments</p>
-        </div>
-      </div>
 
-      <!-- Table Section -->
-      <table class="report-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Category</th>
-            <th>Description</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody id="reportTableBody">
-          <!-- Reports dynamically inserted -->
-        </tbody>
-      </table>
+        <!-- Summary Cards -->
+        <div class="report-cards">
+          <div class="report-card">
+            <h3 id="totalTeachers">0</h3>
+            <p>Total Teachers</p>
+          </div>
+          <div class="report-card">
+            <h3 id="totalLearners">0</h3>
+            <p>Total Learners</p>
+          </div>
+          <div class="report-card">
+            <h3 id="totalPayments">0</h3>
+            <p>Total Payments</p>
+          </div>
+          <div class="report-card">
+            <h3 id="pendingPayments">0</h3>
+            <p>Pending Payments</p>
+          </div>
+        </div>
 
-      <!-- Export Buttons -->
-      <div class="export-buttons">
-        <button class="btn-secondary" id="exportCSV">Export CSV</button>
-        <button class="btn-secondary" id="exportExcel">Export Excel</button>
-        <button class="btn-secondary" id="exportPDF">Export PDF</button>
-      </div>
-    </section>
-  </main>
+        <!-- Table Section -->
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="reportTableBody">
+            <tr><td colspan="4" style="text-align:center;">No reports generated yet</td></tr>
+          </tbody>
+        </table>
 
+        <!-- Export Buttons -->
+        <div class="export-buttons">
+          <button class="btn-secondary" id="exportCSV">Export CSV</button>
+          <button class="btn-secondary" id="exportExcel">Export Excel</button>
+          <button class="btn-secondary" id="exportPDF">Export PDF</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Logout redirect
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      window.location.href = '../index.html'; // set your homepage path
+    });
+  </script>
   <script src="admin.js"></script>
 </body>
 </html>
