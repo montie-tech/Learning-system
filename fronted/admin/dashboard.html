@@ -7,22 +7,20 @@
   <link rel="stylesheet" href="admin.css" />
 </head>
 <body>
-  <div class="admin-container">
+  <div class="admin-wrapper">
     <!-- ===== SIDEBAR ===== -->
     <aside class="sidebar">
       <div class="logo">
         <h2>NEXUS<span> ADMIN</span></h2>
       </div>
       <nav>
-        <ul>
-          <li class="active"><a href="dashboard.html">📊 Dashboard</a></li>
-          <li><a href="classlist.html">📚 Class Lists</a></li>
-          <li><a href="payments.html">💳 Payments</a></li>
-          <li><a href="users.html">👥 Users</a></li>
-          <li><a href="reports.html">📈 Reports</a></li>
-        </ul>
+        <a href="dashboard.html" class="active">📊 Dashboard</a>
+        <a href="classlist.html">📚 Class Lists</a>
+        <a href="payments.html">💳 Payments</a>
+        <a href="users.html">👥 Users</a>
+        <a href="reports.html">📈 Reports</a>
       </nav>
-      <button class="logout-btn">🚪 Logout</button>
+      <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
     </aside>
 
     <!-- ===== MAIN CONTENT ===== -->
@@ -99,6 +97,11 @@
     </main>
   </div>
 
-  <script src="admin.js"></script>
+  <script>
+    // Logout redirect
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      window.location.href = '../index.html'; // change to your homepage path
+    });
+  </script>
 </body>
 </html>
