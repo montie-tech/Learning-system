@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Signup | Nexus Learning System</title>
   <link rel="stylesheet" href="login.css" />
+  
 </head>
 <body>
   <div class="login-container">
@@ -23,10 +24,17 @@
           <input type="email" id="email" placeholder="Enter your email" required />
         </div>
 
-        <div class="input-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter password" required />
-        </div>
+        <form id="registerForm" onsubmit="return validatePasswords()">
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" required />
+          </div>
+
+          <div class="input-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" placeholder="Confirm password" required />
+          </div>
+        </form>
 
         <div class="input-group">
           <label for="role">Register As</label>
@@ -54,24 +62,38 @@
         <h3>Nexus Learning</h3>
         <p>Empowering education through technology.</p>
       </div>
+
       <div>
         <h3>Quick Links</h3>
-        <p><a href="#">Home</a></p>
-        <p><a href="#">About</a></p>
-        <p><a href="#">Contact</a></p>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="contact.html">Contact</a></p>
       </div>
+
       <div>
         <h3>Contact</h3>
         <p>Email: support@nexuslearn.com</p>
         <p>Phone: +254 700 000 000</p>
       </div>
     </div>
+
     <div class="footer-bottom">
       &copy; 2025 Nexus Learning System | All Rights Reserved
     </div>
   </footer>
 
   <script>
+    function validatePasswords() {
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirm_password").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match. Please try again.");
+        return false; // prevent form submission
+      }
+      return true; // allow form submission
+    }
+
     document.getElementById("signupForm").addEventListener("submit", (e) => {
       e.preventDefault();
       alert("✅ Signup successful! You can now login to your account.");
