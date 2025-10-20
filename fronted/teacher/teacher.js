@@ -81,3 +81,13 @@ if (resultsForm) {
     }
   });
 }
+
+const sidebar = document.querySelector(".sidebar");
+const toggleBtn = document.createElement("button");
+toggleBtn.textContent = "☰";
+toggleBtn.classList.add("menu-toggle");
+document.querySelector(".topbar").prepend(toggleBtn);
+
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
