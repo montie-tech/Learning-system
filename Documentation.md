@@ -49,13 +49,52 @@ Repo: https://github.com/sesco001/fina.git
 Nexus-Learning-System/
 │
 ├── frontend/
-│ ├── index.html # Student dashboard
-│ ├── login.html # Login page
-│ ├── signup.html # Signup/registration page
-│ ├── settings.html # User settings and profile page
-│ ├── materials.html # Course content display
-│ ├── assignments.html # Assignment submissions
-│ └── assets/ # CSS, JS, icons, and media files
+│ ├── admin/                          # Admin dashboard section
+│   ├── dashboard.html              # Main admin dashboard page
+│   ├── manage-users.html           # User management interface
+│   ├── manage-courses.html         # Course upload & control
+│   ├── reports.html                # Reports and analytics section
+│   ├── admin.css                   # Styles specific to admin dashboard
+│   └── admin.js                    # Admin dashboard logic
+│
+├── teacher/                        # Instructor/Teacher section
+│   ├── dashboard.html              # Instructor dashboard overview
+│   ├── upload-materials.html       # Upload new lessons or tasks
+│   ├── view-submissions.html       # Review student submissions
+│   ├── profile.html                # Instructor profile settings
+│   ├── teacher.css                 # Instructor-specific styles
+│   └── teacher.js                  # Instructor-side logic
+│
+├── student/                        # Student section
+│   ├── dashboard.html              # Student home/dashboard
+│   ├── courses.html                # Access to all available courses
+│   ├── assignments.html            # Submit and view assignments
+│   ├── progress.html               # Track academic progress
+│   ├── profile.html                # Student profile settings
+│   ├── student.css                 # Styles for student interface
+│   └── student.js                  # Student-side logic
+│
+├── assets/                         # Shared media and static assets
+│   ├── images/
+│   │   ├── about.jpg
+│   │   ├── course.jpg
+│   │   ├── landing.jpg
+│   │   └── logo.png
+│   ├── icons/
+│   │   └── favicon.ico
+│   └── fonts/
+│       └── (custom-fonts-here)
+│
+├── about.html                      # About Nexus page
+├── contact.html                    # Contact page
+├── courses.html                    # Public courses listing
+├── index.html                      # Main landing page
+├── login.html                      # Login form
+├── signup.html                     # Registration form
+│
+├── styles.css                      # Global shared styles
+├── login.css                       # Login page styles
+├── script.js                       # Main global JS logic
 │
 ├── backend/
 ├── server.js
