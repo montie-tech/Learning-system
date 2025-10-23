@@ -40,6 +40,7 @@ Nexus is a **full-stack web application** structured in **two major layers**:
 | **Theming System** | Users can toggle between light/dark mode stored in localStorage. |
 
 ---
+Repo: https://github.com/sesco001/fina.git
 
 ## 🗂️ Folder Structure
 
@@ -57,18 +58,35 @@ Nexus-Learning-System/
 │ └── assets/ # CSS, JS, icons, and media files
 │
 ├── backend/
-│ ├── controllers/
-│ │ └── authController.js # Signup/login logic
-│ ├── models/
-│ │ └── User.js # User schema with role field
-│ ├── routes/
-│ │ └── authRoutes.js # API endpoints for auth
-│ ├── config/
-│ │ └── db.js # MongoDB connection logic
-│ ├── server.js # Entry point of backend
-│ ├── package.json # Backend dependencies
-│ └── .env # Environment variables
-│
+├── server.js
+├── .env
+├── package.json
+├── uploads/                   # uploaded files (assignments, notes, results)
+├── routes/
+│   ├── auth.js
+│   ├── teacher.js
+│   ├── student.js
+│   ├── admin.js
+│   └── files.js
+├── controllers/
+│   ├── authController.js
+│   ├── teacherController.js
+│   ├── studentController.js
+│   └── adminController.js
+├── models/
+│   ├── User.js
+│   ├── Course.js
+│   ├── Assignment.js
+│   ├── Submission.js
+│   ├── Note.js
+│   ├── PastPaper.js
+│   ├── Result.js
+│   └── Payment.js
+├── middleware/
+│   ├── auth.js
+│   └── roles.js
+└── utils/
+    └── sendEmail.js
 └── README.md
 
 
@@ -142,7 +160,7 @@ Example Login Response:
   "message": "Login successful",
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6...",
   "user": {
-    "name": "Alex Ndung’u",
+    "name": "Alex makau",
     "email": "alex@example.com",
     "role": "student"
   }
@@ -216,7 +234,6 @@ Push /frontend folder to main branch.
 
 Enable GitHub Pages under repository settings.
 
-Access frontend live at https://your-username.github.io/Nexus-Learning-System/.
 
 🧑‍💻 Contribution Guidelines
 
